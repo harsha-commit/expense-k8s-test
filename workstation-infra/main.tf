@@ -5,6 +5,7 @@ module "ec2_instance" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = ["sg-08ab8575176da550c"]
   subnet_id              = "subnet-0f87134601ecece2c"
+  ami                    = "ami-041e2ea9402c46c32"
 
   tags = {
     Name        = "workstation"
@@ -14,7 +15,7 @@ module "ec2_instance" {
 }
 
 resource "aws_volume_attachment" "this" {
-  device_name = "/dev/xvda"
+  device_name = "/dev/sdh"
   volume_id   = aws_ebs_volume.this.id
   instance_id = module.ec2_instance.id
 }
