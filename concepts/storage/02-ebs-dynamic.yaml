@@ -38,7 +38,7 @@ spec:
       persistentVolumeClaim:
         claimName: ebs-claim
   nodeSelector:
-	  topology.kubernetes.io/zone: us-east-1d
+    topology.kubernetes.io/zone: us-east-1d
 
 ---
 apiVersion: v1
