@@ -7,6 +7,8 @@ module "ec2_instance" {
   subnet_id              = "subnet-0f87134601ecece2c"
   ami                    = "ami-041e2ea9402c46c32"
 
+  user_data = file("workstation.sh")
+
   tags = {
     Name        = "workstation"
     Terraform   = "true"
